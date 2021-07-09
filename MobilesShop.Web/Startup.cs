@@ -20,7 +20,7 @@ namespace MobilesShop.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddDbContext<ApplicationDbContext>(options => options
+                .AddDbContext<MobilesShopDbContext>(options => options
                     .UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services
@@ -29,7 +29,7 @@ namespace MobilesShop.Web
             services
                 .AddDefaultIdentity<IdentityUser>(options => options
                     .SignIn.RequireConfirmedAccount = false)
-                    .AddEntityFrameworkStores<ApplicationDbContext>();
+                    .AddEntityFrameworkStores<MobilesShopDbContext>();
 
             services.AddControllersWithViews();
         }
