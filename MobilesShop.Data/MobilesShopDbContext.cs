@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using MobilesShop.Web.Data.Models;
+using MobilesShop.Data.Models;
 
-namespace MobilesShop.Web.Data
+namespace MobilesShop.Data
 {
     public class MobilesShopDbContext : IdentityDbContext
     {

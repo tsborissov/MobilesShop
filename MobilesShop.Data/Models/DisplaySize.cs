@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MobilesShop.Web.Data.Models
+namespace MobilesShop.Data.Models
 {
     public class DisplaySize
     {

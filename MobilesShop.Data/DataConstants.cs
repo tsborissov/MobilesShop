@@ -1,4 +1,4 @@
-﻿namespace MobilesShop.Web.Data
+﻿namespace MobilesShop.Data
 {
     public class DataConstants
     {

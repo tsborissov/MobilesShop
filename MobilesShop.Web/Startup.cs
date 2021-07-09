@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MobilesShop.Web.Data;
+using MobilesShop.Data;
 
 namespace MobilesShop.Web
 {

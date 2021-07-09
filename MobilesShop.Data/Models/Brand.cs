@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using static MobilesShop.Web.Data.DataConstants;
+using static MobilesShop.Data.DataConstants;
 
-namespace MobilesShop.Web.Data.Models
+namespace MobilesShop.Data.Models
 {
     public class Brand
     {
