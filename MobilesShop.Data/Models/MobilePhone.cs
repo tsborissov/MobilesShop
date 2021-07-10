@@ -10,7 +10,7 @@ namespace MobilesShop.Data.Models
 
         public int BrandId { get; set; }
 
-        public Brand Brand { get; set; }
+        public Brand Brand { get; init; }
 
         [Required]
         [MaxLength(MobilePhoneModelMaxLength)]
@@ -20,15 +20,15 @@ namespace MobilesShop.Data.Models
 
         public int ChipsetId { get; set; }
 
-        public Chipset Chipset { get; set; }
+        public Chipset Chipset { get; init; }
 
         public int DisplayTypeId { get; set; }
 
-        public DisplayType DisplayType { get; set; }
+        public DisplayType DisplayType { get; init; }
 
         public int DisplaySizeId { get; set; }
 
-        public DisplaySize DisplaySize { get; set; }
+        public DisplaySize DisplaySize { get; init; }
 
         public int Memory { get; set; }
 
@@ -36,7 +36,7 @@ namespace MobilesShop.Data.Models
 
         public int CameraTypeId { get; set; }
 
-        public CameraType CameraType { get; set; }
+        public CameraType CameraType { get; init; }
 
         public int Battery { get; set; }
 

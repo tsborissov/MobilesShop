@@ -12,6 +12,6 @@ namespace MobilesShop.Data.Models
         [MaxLength(BrandNameMaxLength)]
         public string Name { get; set; }
 
-        public ICollection<MobilePhone> Mobiles { get; init; } = new HashSet<MobilePhone>();
+        public ICollection<MobilePhone> MobilePhones { get; init; } = new HashSet<MobilePhone>();
     }
 }
