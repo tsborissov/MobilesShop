@@ -2,6 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MobilesShop.Data;
+using MobilesShop.Data.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MobilesShop.Web.Infrastructure
 {
@@ -16,7 +19,111 @@ namespace MobilesShop.Web.Infrastructure
 
             data.Database.Migrate();
 
+            SeedBrands(data);
+            SeedCameraTypes(data);
+            SeedChipsets(data);
+            SeedDisplaySizes(data);
+            SeedDisplayTypes(data);
+
+            data.SaveChanges();
+
             return app;
+        }
+
+        private static void SeedBrands(MobilesShopDbContext data)
+        {
+            if (!data.Brands.Any())
+            {
+                var brands = new List<Brand>{
+                    new Brand { Name = "Samsung" },
+                    new Brand { Name = "Apple" },
+                    new Brand { Name = "Huawei" },
+                    new Brand { Name = "Sony" },
+                    new Brand { Name = "Nokia" },
+                    new Brand { Name = "Google" },
+                    new Brand { Name = "Motorola" },
+                    new Brand { Name = "Xiaomi" },
+                    new Brand { Name = "Lenovo" },
+                    new Brand { Name = "Oppo" },
+                };
+
+                data.Brands.AddRange(brands);
+            }
+        }
+
+        private static void SeedCameraTypes(MobilesShopDbContext data)
+        {
+            if (!data.CameraTypes.Any())
+            {
+                var cameraTypes = new List<CameraType>{
+                    new CameraType { Name = "Single" },
+                    new CameraType { Name = "Double" },
+                    new CameraType { Name = "Tripple" },
+                    new CameraType { Name = "Quad" },
+                };
+
+                data.CameraTypes.AddRange(cameraTypes);
+            }
+        }
+
+        private static void SeedChipsets(MobilesShopDbContext data)
+        {
+            if (!data.Chipsets.Any())
+            {
+                var chipsets = new List<Chipset>{
+                    new Chipset { Name = "A14 Bionic", Cores = 6, Clock = 2990 },
+                    new Chipset { Name = "Snapdragon 888", Cores = 8, Clock = 2840 },
+                    new Chipset { Name = "Exynos 2100", Cores = 8, Clock = 2900 },
+                    new Chipset { Name = "Kirin 9000", Cores = 8, Clock = 3130 },
+                    new Chipset { Name = "Exynos 1080", Cores = 8, Clock = 2800 },
+                    new Chipset { Name = "Dimensity 1100", Cores = 8, Clock = 2600 },
+                    new Chipset { Name = "Snapdragon 855", Cores = 8, Clock = 2960  },
+                    new Chipset { Name = "Snapdragon 801", Cores = 4, Clock = 2500},
+                    new Chipset { Name = "Exynos 7570", Cores = 4, Clock = 1400 },
+                    new Chipset { Name = "MediaTek MT6739", Cores = 4, Clock = 1500 },
+                };
+
+                data.Chipsets.AddRange(chipsets);
+            }
+        }
+
+        private static void SeedDisplaySizes(MobilesShopDbContext data)
+        {
+            if (!data.DisplaySizes.Any())
+            {
+                var displaySizes = new List<DisplaySize>{
+                    new DisplaySize { Size = 4.0 },
+                    new DisplaySize { Size = 4.7 },
+                    new DisplaySize { Size = 5.0 },
+                    new DisplaySize { Size = 5.1 },
+                    new DisplaySize { Size = 5.2 },
+                    new DisplaySize { Size = 5.5 },
+                    new DisplaySize { Size = 5.7 },
+                    new DisplaySize { Size = 5.8 },
+                    new DisplaySize { Size = 6.0 },
+                    new DisplaySize { Size = 6.2 },
+                };
+
+                data.DisplaySizes.AddRange(displaySizes);
+            }
+        }
+
+        private static void SeedDisplayTypes(MobilesShopDbContext data)
+        {
+            if (!data.DisplayTypes.Any())
+            {
+                var displayTypes = new List<DisplayType>{
+                    new DisplayType { Name = "IPS-LCD" },
+                    new DisplayType { Name = "IPS" },
+                    new DisplayType { Name = "TFT" },
+                    new DisplayType { Name = "AMOLED" },
+                    new DisplayType { Name = "Super AMOLED" },
+                    new DisplayType { Name = "OLED" },
+                    new DisplayType { Name = "LCD" },
+                };
+
+                data.DisplayTypes.AddRange(displayTypes);
+            }
         }
     }
 }
