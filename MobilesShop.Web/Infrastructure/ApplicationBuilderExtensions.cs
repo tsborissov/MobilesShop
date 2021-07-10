@@ -24,8 +24,6 @@ namespace MobilesShop.Web.Infrastructure
             SeedDisplaySizes(data);
             SeedDisplayTypes(data);
 
-            data.SaveChanges();
-
             return app;
         }
 
@@ -49,6 +47,8 @@ namespace MobilesShop.Web.Infrastructure
                 new Brand { Name = "Lenovo" },
                 new Brand { Name = "Oppo" },
             });
+
+            data.SaveChanges();
         }
 
         private static void SeedCameraTypes(MobilesShopDbContext data)
@@ -65,6 +65,8 @@ namespace MobilesShop.Web.Infrastructure
                 new CameraType { Name = "Tripple" },
                 new CameraType { Name = "Quad" },
             });
+
+            data.SaveChanges();
         }
 
         private static void SeedChipsets(MobilesShopDbContext data)
@@ -87,6 +89,8 @@ namespace MobilesShop.Web.Infrastructure
                 new Chipset { Name = "Exynos 7570", Cores = 4, Clock = 1400 },
                 new Chipset { Name = "MediaTek MT6739", Cores = 4, Clock = 1500 },
             });
+
+            data.SaveChanges();
         }
 
         private static void SeedDisplaySizes(MobilesShopDbContext data)
@@ -109,6 +113,8 @@ namespace MobilesShop.Web.Infrastructure
                 new DisplaySize { Size = 6.0 },
                 new DisplaySize { Size = 6.2 },
             });
+
+            data.SaveChanges();
         }
 
         private static void SeedDisplayTypes(MobilesShopDbContext data)
@@ -128,6 +134,8 @@ namespace MobilesShop.Web.Infrastructure
                 new DisplayType { Name = "OLED" },
                 new DisplayType { Name = "LCD" },
             });
+
+            data.SaveChanges();
         }
     }
 }
