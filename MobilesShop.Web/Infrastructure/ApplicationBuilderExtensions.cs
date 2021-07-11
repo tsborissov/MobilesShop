@@ -102,16 +102,16 @@ namespace MobilesShop.Web.Infrastructure
 
             data.DisplaySizes.AddRange(new[] 
             {
-                new DisplaySize { Size = 4.0 },
-                new DisplaySize { Size = 4.7 },
-                new DisplaySize { Size = 5.0 },
-                new DisplaySize { Size = 5.1 },
-                new DisplaySize { Size = 5.2 },
-                new DisplaySize { Size = 5.5 },
-                new DisplaySize { Size = 5.7 },
-                new DisplaySize { Size = 5.8 },
-                new DisplaySize { Size = 6.0 },
-                new DisplaySize { Size = 6.2 },
+                new DisplaySize { Name = "4.0\"" },
+                new DisplaySize { Name = "4.7\"" },
+                new DisplaySize { Name = "5.0\"" },
+                new DisplaySize { Name = "5.1\"" },
+                new DisplaySize { Name = "5.2\"" },
+                new DisplaySize { Name = "5.5\"" },
+                new DisplaySize { Name = "5.7\"" },
+                new DisplaySize { Name = "5.8\"" },
+                new DisplaySize { Name = "6.0\"" },
+                new DisplaySize { Name = "6.2\"" },
             });
 
             data.SaveChanges();

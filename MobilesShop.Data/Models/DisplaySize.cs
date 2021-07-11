@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+using static MobilesShop.Data.DataConstants;
 
 namespace MobilesShop.Data.Models
 {
@@ -6,7 +9,9 @@ namespace MobilesShop.Data.Models
     {
         public int Id { get; init; }
 
-        public double Size { get; set; }
+        [Required]
+        [MaxLength(DisplaySizeNameMaxLength)]
+        public string Name { get; set; }
 
         public ICollection<MobilePhone> MobilePhones { get; init; } = new HashSet<MobilePhone>();
     }

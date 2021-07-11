@@ -1,0 +1,107 @@
+﻿@model MobilePhoneAddFormModel
+
+@{
+    ViewData["Title"] = "Add Mobile Phone";
+}
+
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <h2 class="heading-margin">Add Mobile:</h2>
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="BrandId"></label>
+                <select asp-for="BrandId" class="form-control">
+                    @foreach (var brand in Model.Brands)
+                    {
+                        <option>@brand.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Model"></label>
+                <input asp-for="Model" class="form-control" placeholder="Model name here...">
+            </div>
+            <div class="form-group">
+                <label asp-for="Year"></label>
+                <input asp-for="Year" class="form-control" value="@DateTime.UtcNow.Year">
+            </div>
+            <div class="form-group">
+                <label asp-for="ChipsetId"></label>
+                <select asp-for="ChipsetId" class="form-control">
+                    @foreach (var chipset in Model.Chipsets)
+                    {
+                        <option>@chipset.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DisplayTypeId"></label>
+                <select asp-for="DisplayTypeId" class="form-control">
+                    @foreach (var displayType in Model.DisplayTypes)
+                    {
+                        <option>@displayType.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DisplaySizeId"></label>
+                <select asp-for="DisplaySizeId" class="form-control">
+                    @foreach (var displaySize in Model.DisplaySizes)
+                    {
+                        <option>@displaySize.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CameraTypeId"></label>
+                <select asp-for="CameraTypeId" class="form-control">
+                    @foreach (var cameraType in Model.CameraTypes)
+                    {
+                        <option>@cameraType.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Memory"></label>
+                <input asp-for="Memory" class="form-control" value="4">
+            </div>
+            <div class="form-group">
+                <label asp-for="Storage"></label>
+                <input asp-for="Storage" class="form-control" value="64">
+            </div>
+            <div class="form-group">
+                <label asp-for="Battery"></label>
+                <input asp-for="Battery" class="form-control" placeholder="Battery capacity...">
+            </div>
+            <div class="form-group">
+                <label asp-for="Connectivity"></label>
+                <input asp-for="Connectivity" class="form-control" placeholder="2G/3G/4G/5G, Wifi, Bluetooth, etc...">
+            </div>
+            <div class="checkbox-margin">
+                <div class="form-check">
+                    <input asp-for="IsDualSim" type="checkbox" class="form-check-input">
+                    <label asp-for="IsDualSim" class="form-check-label"></label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Weight"></label>
+                <input asp-for="Weight" class="form-control" placeholder="Weight in grams...">
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl"></label>
+                <input asp-for="ImageUrl" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="Details"></label>
+                <textarea asp-for="Details" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary float-right">Save</button>
+        </form>
+    </div>
+</div>
