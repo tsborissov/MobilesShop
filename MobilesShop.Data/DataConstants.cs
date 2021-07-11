@@ -22,7 +22,7 @@
         public const int MobilePhoneImageUrlMaxLength = 2048;
         public const int MobilePhoneDetailsMinLength = 5;
         public const int MobilePhoneDetailsMaxLength = 500;
-        public const int MobilePhoneConnectivityMinLength = 3;
+        public const int MobilePhoneConnectivityMinLength = 2;
         public const int MobilePhoneConnectivityMaxLength = 50;
         public const int MobilePhoneMinYearValue = 2010;
         public const int MobilePhoneMaxYearValue = 2030;

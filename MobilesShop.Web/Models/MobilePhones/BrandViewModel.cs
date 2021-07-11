@@ -1,6 +1,6 @@
 ﻿namespace MobilesShop.Web.Models.MobilePhones
 {
-    public class MobilePhoneBrandViewModel
+    public class BrandViewModel
     {
         public int Id { get; init; }
 

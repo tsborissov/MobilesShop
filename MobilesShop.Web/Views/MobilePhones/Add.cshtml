@@ -14,24 +14,26 @@
                 <select asp-for="BrandId" class="form-control">
                     @foreach (var brand in Model.Brands)
                     {
-                        <option>@brand.Name</option>
+                        <option value="@brand.Id">@brand.Name</option>
                     }
                 </select>
             </div>
             <div class="form-group">
                 <label asp-for="Model"></label>
                 <input asp-for="Model" class="form-control" placeholder="Model name here...">
+                <span asp-validation-for="Model" class="small text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Year"></label>
                 <input asp-for="Year" class="form-control" value="@DateTime.UtcNow.Year">
+                <span asp-validation-for="Year" class="small text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ChipsetId"></label>
                 <select asp-for="ChipsetId" class="form-control">
                     @foreach (var chipset in Model.Chipsets)
                     {
-                        <option>@chipset.Name</option>
+                        <option value="@chipset.Id">@chipset.Name</option>
                     }
                 </select>
             </div>
@@ -40,7 +42,7 @@
                 <select asp-for="DisplayTypeId" class="form-control">
                     @foreach (var displayType in Model.DisplayTypes)
                     {
-                        <option>@displayType.Name</option>
+                        <option value="@displayType.Id">@displayType.Name</option>
                     }
                 </select>
             </div>
@@ -49,7 +51,7 @@
                 <select asp-for="DisplaySizeId" class="form-control">
                     @foreach (var displaySize in Model.DisplaySizes)
                     {
-                        <option>@displaySize.Name</option>
+                        <option value="@displaySize.Id">@displaySize.Name</option>
                     }
                 </select>
             </div>
@@ -58,25 +60,29 @@
                 <select asp-for="CameraTypeId" class="form-control">
                     @foreach (var cameraType in Model.CameraTypes)
                     {
-                        <option>@cameraType.Name</option>
+                        <option value="@cameraType.Id">@cameraType.Name</option>
                     }
                 </select>
             </div>
             <div class="form-group">
                 <label asp-for="Memory"></label>
-                <input asp-for="Memory" class="form-control" value="4">
+                <input asp-for="Memory" class="form-control">
+                <span asp-validation-for="Memory" class="small text-danger"></span> 
             </div>
             <div class="form-group">
                 <label asp-for="Storage"></label>
-                <input asp-for="Storage" class="form-control" value="64">
+                <input asp-for="Storage" class="form-control">
+                <span asp-validation-for="Storage" class="small text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Battery"></label>
                 <input asp-for="Battery" class="form-control" placeholder="Battery capacity...">
+                <span asp-validation-for="Battery" class="small text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Connectivity"></label>
                 <input asp-for="Connectivity" class="form-control" placeholder="2G/3G/4G/5G, Wifi, Bluetooth, etc...">
+                <span asp-validation-for="Connectivity" class="small text-danger"></span>
             </div>
             <div class="checkbox-margin">
                 <div class="form-check">
@@ -87,18 +93,22 @@
             <div class="form-group">
                 <label asp-for="Weight"></label>
                 <input asp-for="Weight" class="form-control" placeholder="Weight in grams...">
+                <span asp-validation-for="Weight" class="small text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ImageUrl"></label>
                 <input asp-for="ImageUrl" class="form-control">
+                <span asp-validation-for="ImageUrl" class="small text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Details"></label>
                 <textarea asp-for="Details" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Details" class="small text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Price"></label>
                 <input asp-for="Price" class="form-control">
+                <span asp-validation-for="Price" class="small text-danger"></span>
             </div>
 
             <button type="submit" class="btn btn-primary float-right">Save</button>

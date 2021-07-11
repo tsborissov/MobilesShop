@@ -10,10 +10,13 @@ namespace MobilesShop.Web.Models.MobilePhones
         [Display(Name = "Brand")]
         public int BrandId { get; init; }
 
-        public IEnumerable<MobilePhoneBrandViewModel> Brands { get; set; }
+        public IEnumerable<BrandViewModel> Brands { get; set; }
 
         [Required]
-        [StringLength(MobilePhoneModelMaxLength, MinimumLength = MobilePhoneModelMinLength)]
+        [StringLength(
+            MobilePhoneModelMaxLength, 
+            MinimumLength = MobilePhoneModelMinLength, 
+            ErrorMessage = "{2} to {1} characters required.")]
         public string Model { get; init; }
 
         [Range(MobilePhoneMinYearValue, MobilePhoneMaxYearValue)]
@@ -59,6 +62,7 @@ namespace MobilesShop.Web.Models.MobilePhones
         public int Weight { get; init; }
 
         [Url]
+        [Required]
         [Display(Name = "Image URL")]
         public string ImageUrl { get; init; }
 
