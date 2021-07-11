@@ -85,6 +85,10 @@ namespace MobilesShop.Web.Controllers
                 Price = mobile.Price
             };
 
+            this.data.MobilePhones.Add(mobilePhone);
+
+            this.data.SaveChanges();
+
             return RedirectToAction("Index", "Home");
         }
 
