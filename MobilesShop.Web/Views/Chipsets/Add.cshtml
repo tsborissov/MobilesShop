@@ -1,0 +1,30 @@
+﻿@model ChipsetAddFormModel
+
+@{ 
+    ViewData["Title"] = "Add Chipset";
+}
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <h2 class="heading-margin">Add Chipset:</h2>
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" placeholder="Chipset name...">
+                <span asp-validation-for="Name" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cores"></label>
+                <input asp-for="Cores" class="form-control">
+                <span asp-validation-for="Cores" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clock"></label>
+                <input asp-for="Clock" class="form-control">
+                <span asp-validation-for="Clock" class="small text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary float-right">Save</button>
+        </form>
+    </div>
+</div>

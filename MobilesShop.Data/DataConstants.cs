@@ -6,10 +6,14 @@
         public const int BrandNameMaxLength = 20;
 
         public const int CameraTypeNameMinLength = 2;
-        public const int CameraTypeNameMaxLength = 10;
+        public const int CameraTypeNameMaxLength = 200;
 
         public const int ChipsetNameMinLength = 5;
         public const int ChipsetNameMaxLength = 30;
+        public const int ChipsetCoresMinValue = 1;
+        public const int ChipsetCoresMaxValue = 64;
+        public const int ChipsetClockMinValue = 500;
+        public const int ChipsetClockMaxValue = 10000;
 
         public const int DisplayTypeNameMinLength = 3;
         public const int DisplayTypeNameMaxLength = 20;

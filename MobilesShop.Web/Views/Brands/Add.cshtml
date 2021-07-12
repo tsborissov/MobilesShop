@@ -1,0 +1,20 @@
+﻿@model BrandAddFormModel
+
+@{
+    ViewData["Title"] = "Add Brand";
+}
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <h2 class="heading-margin">Add Brand:</h2>
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" placeholder="Brand name here...">
+                <span asp-validation-for="Name" class="small text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary float-right">Save</button>
+        </form>
+    </div>
+</div>

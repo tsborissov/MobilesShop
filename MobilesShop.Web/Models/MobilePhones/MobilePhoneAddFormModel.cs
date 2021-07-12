@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 using static MobilesShop.Data.DataConstants;
@@ -10,6 +11,7 @@ namespace MobilesShop.Web.Models.MobilePhones
         [Display(Name = "Brand")]
         public int BrandId { get; init; }
 
+        [BindNever]
         public IEnumerable<BrandViewModel> Brands { get; set; }
 
         [Required]
@@ -25,21 +27,25 @@ namespace MobilesShop.Web.Models.MobilePhones
         [Display(Name = "Chipset")]
         public int ChipsetId { get; init; }
 
+        [BindNever]
         public IEnumerable<ChipsetViewModel> Chipsets { get; set; }
 
         [Display(Name = "Display Type")]
         public int DisplayTypeId { get; init; }
 
+        [BindNever]
         public IEnumerable<DisplayTypeViewModel> DisplayTypes { get; set; }
 
         [Display(Name = "Display Size")]
         public int DisplaySizeId { get; init; }
 
+        [BindNever]
         public IEnumerable<DisplaySizeViewModel> DisplaySizes { get; set; }
 
         [Display(Name = "Camera Type")]
         public int CameraTypeId { get; init; }
 
+        [BindNever]
         public IEnumerable<CameraTypeViewModel> CameraTypes { get; set; }
 
         [Range(MobilePhoneMemoryMinValue, MobilePhoneMemoryMaxValue)]

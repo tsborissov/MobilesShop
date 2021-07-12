@@ -27,65 +27,65 @@ namespace MobilesShop.Web.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult Add(MobilePhoneAddFormModel mobile)
+        public IActionResult Add(MobilePhoneAddFormModel mobilePhone)
         {
-            if (!this.data.Brands.Any(b => b.Id == mobile.BrandId))
+            if (!this.data.Brands.Any(b => b.Id == mobilePhone.BrandId))
             {
-                this.ModelState.AddModelError(nameof(mobile.BrandId), "Brand does not exist!");
+                this.ModelState.AddModelError(nameof(mobilePhone.BrandId), "Brand does not exist!");
             }
 
-            if (!this.data.CameraTypes.Any(c => c.Id == mobile.CameraTypeId))
+            if (!this.data.CameraTypes.Any(c => c.Id == mobilePhone.CameraTypeId))
             {
-                this.ModelState.AddModelError(nameof(mobile.CameraTypeId), "Camera Type does not exist!");
+                this.ModelState.AddModelError(nameof(mobilePhone.CameraTypeId), "Camera Type does not exist!");
             }
 
-            if (!this.data.Chipsets.Any(c => c.Id == mobile.ChipsetId))
+            if (!this.data.Chipsets.Any(c => c.Id == mobilePhone.ChipsetId))
             {
-                this.ModelState.AddModelError(nameof(mobile.ChipsetId), "Chipset does not exist!");
+                this.ModelState.AddModelError(nameof(mobilePhone.ChipsetId), "Chipset does not exist!");
             }
 
-            if (!this.data.DisplayTypes.Any(d => d.Id == mobile.DisplayTypeId))
+            if (!this.data.DisplayTypes.Any(d => d.Id == mobilePhone.DisplayTypeId))
             {
-                this.ModelState.AddModelError(nameof(mobile.DisplayTypeId), "Display Type does not exist!");
+                this.ModelState.AddModelError(nameof(mobilePhone.DisplayTypeId), "Display Type does not exist!");
             }
 
-            if (!this.data.DisplaySizes.Any(d => d.Id == mobile.DisplaySizeId))
+            if (!this.data.DisplaySizes.Any(d => d.Id == mobilePhone.DisplaySizeId))
             {
-                this.ModelState.AddModelError(nameof(mobile.DisplaySizeId), "Display Size does not exist!");
+                this.ModelState.AddModelError(nameof(mobilePhone.DisplaySizeId), "Display Size does not exist!");
             }
 
             if (!ModelState.IsValid)
             {
-                mobile.Brands = this.GetMobilePhonesBrands();
-                mobile.CameraTypes = this.GetCameraType();
-                mobile.Chipsets = this.GetChipset();
-                mobile.DisplayTypes = this.GetDisplayType();
-                mobile.DisplaySizes = this.GetDisplaySize();
+                mobilePhone.Brands = this.GetMobilePhonesBrands();
+                mobilePhone.CameraTypes = this.GetCameraType();
+                mobilePhone.Chipsets = this.GetChipset();
+                mobilePhone.DisplayTypes = this.GetDisplayType();
+                mobilePhone.DisplaySizes = this.GetDisplaySize();
 
-                return View(mobile);
+                return View(mobilePhone);
             }
 
-            var mobilePhone = new MobilePhone
+            var mobilePhoneData = new MobilePhone
             {
-                BrandId = mobile.BrandId,
-                Model = mobile.Model,
-                Year = mobile.Year,
-                ChipsetId = mobile.ChipsetId,
-                DisplayTypeId = mobile.DisplayTypeId,
-                DisplaySizeId = mobile.DisplaySizeId,
-                Memory = mobile.Memory,
-                Storage = mobile.Storage,
-                CameraTypeId = mobile.CameraTypeId,
-                Battery = mobile.Battery,
-                Connectivity = mobile.Connectivity,
-                IsDualSim = mobile.IsDualSim,
-                Weight = mobile.Weight,
-                ImageUrl = mobile.ImageUrl,
-                Details = mobile.Details,
-                Price = mobile.Price
+                BrandId = mobilePhone.BrandId,
+                Model = mobilePhone.Model,
+                Year = mobilePhone.Year,
+                ChipsetId = mobilePhone.ChipsetId,
+                DisplayTypeId = mobilePhone.DisplayTypeId,
+                DisplaySizeId = mobilePhone.DisplaySizeId,
+                Memory = mobilePhone.Memory,
+                Storage = mobilePhone.Storage,
+                CameraTypeId = mobilePhone.CameraTypeId,
+                Battery = mobilePhone.Battery,
+                Connectivity = mobilePhone.Connectivity,
+                IsDualSim = mobilePhone.IsDualSim,
+                Weight = mobilePhone.Weight,
+                ImageUrl = mobilePhone.ImageUrl,
+                Details = mobilePhone.Details,
+                Price = mobilePhone.Price
             };
 
-            this.data.MobilePhones.Add(mobilePhone);
+            this.data.MobilePhones.Add(mobilePhoneData);
 
             this.data.SaveChanges();
 
