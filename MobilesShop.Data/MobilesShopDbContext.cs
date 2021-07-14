@@ -17,9 +17,7 @@ namespace MobilesShop.Data
 
         public DbSet<Chipset> Chipsets { get; init; }
 
-        public DbSet<DisplaySize> DisplaySizes { get; init; }
-
-        public DbSet<DisplayType> DisplayTypes { get; init; }
+        public DbSet<Display> Displays { get; set; }
 
         public DbSet<MobilePhone> MobilePhones { get; init; }
 
@@ -48,18 +46,10 @@ namespace MobilesShop.Data
 
             builder
                 .Entity<MobilePhone>()
-                .HasOne(ds => ds.DisplaySize)
-                .WithMany(ds => ds.MobilePhones)
-                .HasForeignKey(ds => ds.DisplaySizeId)
+                .HasOne(d => d.Display)
+                .WithMany(d => d.MobilePhones)
+                .HasForeignKey(d => d.DisplayId)
                 .OnDelete(DeleteBehavior.Restrict);
-
-            builder
-                .Entity<MobilePhone>()
-                .HasOne(dt => dt.DisplayType)
-                .WithMany(dt => dt.MobilePhones)
-                .HasForeignKey(dt => dt.DisplayTypeId)
-                .OnDelete(DeleteBehavior.Restrict);
-
 
             base.OnModelCreating(builder);
         }

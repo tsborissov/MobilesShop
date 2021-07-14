@@ -1,6 +1,6 @@
 ﻿namespace MobilesShop.Web.Models.MobilePhones
 {
-    public class BrandViewModel
+    public class CameraTypeDropdownViewModel
     {
         public int Id { get; init; }
 

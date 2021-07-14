@@ -19,4 +19,9 @@
     <ProjectReference Include="..\MobilesShop.Data\MobilesShop.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Displays\" />
+    <Folder Include="Views\Displays\" />
+  </ItemGroup>
+
 </Project>

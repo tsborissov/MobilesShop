@@ -12,7 +12,7 @@ namespace MobilesShop.Web.Models.MobilePhones
         public int BrandId { get; init; }
 
         [BindNever]
-        public IEnumerable<BrandViewModel> Brands { get; set; }
+        public IEnumerable<BrandDropdownViewModel> Brands { get; set; }
 
         [Required]
         [StringLength(
@@ -28,25 +28,19 @@ namespace MobilesShop.Web.Models.MobilePhones
         public int ChipsetId { get; init; }
 
         [BindNever]
-        public IEnumerable<ChipsetViewModel> Chipsets { get; set; }
+        public IEnumerable<ChipsetDropdownViewModel> Chipsets { get; set; }
 
-        [Display(Name = "Display Type")]
-        public int DisplayTypeId { get; init; }
-
-        [BindNever]
-        public IEnumerable<DisplayTypeViewModel> DisplayTypes { get; set; }
-
-        [Display(Name = "Display Size")]
-        public int DisplaySizeId { get; init; }
+        [Display(Name = "Display")]
+        public int DisplayId { get; init; }
 
         [BindNever]
-        public IEnumerable<DisplaySizeViewModel> DisplaySizes { get; set; }
+        public IEnumerable<DisplayDropdownViewModel> Displays { get; set; }
 
         [Display(Name = "Camera Type")]
         public int CameraTypeId { get; init; }
 
         [BindNever]
-        public IEnumerable<CameraTypeViewModel> CameraTypes { get; set; }
+        public IEnumerable<CameraTypeDropdownViewModel> CameraTypes { get; set; }
 
         [Range(MobilePhoneMemoryMinValue, MobilePhoneMemoryMaxValue)]
         public int Memory { get; init; }

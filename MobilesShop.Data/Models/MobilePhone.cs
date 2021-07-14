@@ -22,13 +22,9 @@ namespace MobilesShop.Data.Models
 
         public Chipset Chipset { get; init; }
 
-        public int DisplayTypeId { get; set; }
+        public int DisplayId { get; set; }
 
-        public DisplayType DisplayType { get; init; }
-
-        public int DisplaySizeId { get; set; }
-
-        public DisplaySize DisplaySize { get; init; }
+        public Display Display { get; init; }
 
         public int Memory { get; set; }
 

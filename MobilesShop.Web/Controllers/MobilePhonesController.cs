@@ -21,8 +21,7 @@ namespace MobilesShop.Web.Controllers
             Brands = this.GetMobilePhonesBrands(),
             CameraTypes = this.GetCameraType(),
             Chipsets = this.GetChipset(),
-            DisplayTypes = this.GetDisplayType(),
-            DisplaySizes = this.GetDisplaySize()
+            Displays = this.GetDisplay(),
         });
 
         [Authorize]
@@ -44,23 +43,12 @@ namespace MobilesShop.Web.Controllers
                 this.ModelState.AddModelError(nameof(mobilePhone.ChipsetId), "Chipset does not exist!");
             }
 
-            if (!this.data.DisplayTypes.Any(d => d.Id == mobilePhone.DisplayTypeId))
-            {
-                this.ModelState.AddModelError(nameof(mobilePhone.DisplayTypeId), "Display Type does not exist!");
-            }
-
-            if (!this.data.DisplaySizes.Any(d => d.Id == mobilePhone.DisplaySizeId))
-            {
-                this.ModelState.AddModelError(nameof(mobilePhone.DisplaySizeId), "Display Size does not exist!");
-            }
-
             if (!ModelState.IsValid)
             {
                 mobilePhone.Brands = this.GetMobilePhonesBrands();
                 mobilePhone.CameraTypes = this.GetCameraType();
                 mobilePhone.Chipsets = this.GetChipset();
-                mobilePhone.DisplayTypes = this.GetDisplayType();
-                mobilePhone.DisplaySizes = this.GetDisplaySize();
+                mobilePhone.Displays = this.GetDisplay();
 
                 return View(mobilePhone);
             }
@@ -71,8 +59,7 @@ namespace MobilesShop.Web.Controllers
                 Model = mobilePhone.Model,
                 Year = mobilePhone.Year,
                 ChipsetId = mobilePhone.ChipsetId,
-                DisplayTypeId = mobilePhone.DisplayTypeId,
-                DisplaySizeId = mobilePhone.DisplaySizeId,
+                DisplayId = mobilePhone.DisplayId,
                 Memory = mobilePhone.Memory,
                 Storage = mobilePhone.Storage,
                 CameraTypeId = mobilePhone.CameraTypeId,
@@ -92,55 +79,44 @@ namespace MobilesShop.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        private IEnumerable<BrandViewModel> GetMobilePhonesBrands()
+        private IEnumerable<BrandDropdownViewModel> GetMobilePhonesBrands()
             => this.data
                 .Brands
                 .OrderBy(b => b.Name)
-                .Select(b => new BrandViewModel
+                .Select(b => new BrandDropdownViewModel
                 {
                     Id = b.Id,
                     Name = b.Name
                 })
                 .ToList();
 
-        private IEnumerable<CameraTypeViewModel> GetCameraType()
+        private IEnumerable<CameraTypeDropdownViewModel> GetCameraType()
             => this.data
                 .CameraTypes
                 .OrderBy(c => c.Name)
-                .Select(c => new CameraTypeViewModel
+                .Select(c => new CameraTypeDropdownViewModel
                 {
                     Id = c.Id,
                     Name = c.Name
                 })
                 .ToList();
 
-        private IEnumerable<ChipsetViewModel> GetChipset()
+        private IEnumerable<ChipsetDropdownViewModel> GetChipset()
             => this.data
                 .Chipsets
                 .OrderBy(c => c.Name)
-                .Select(c => new ChipsetViewModel
+                .Select(c => new ChipsetDropdownViewModel
                 {
                     Id = c.Id,
                     Name = c.Name
                 })
                 .ToList();
 
-        private IEnumerable<DisplayTypeViewModel> GetDisplayType()
+        private IEnumerable<DisplayDropdownViewModel> GetDisplay()
             => this.data
-                .DisplayTypes
+                .Displays
                 .OrderBy(d => d.Name)
-                .Select(d => new DisplayTypeViewModel
-                {
-                    Id = d.Id,
-                    Name = d.Name
-                })
-                .ToList();
-
-        private IEnumerable<DisplaySizeViewModel> GetDisplaySize()
-            => this.data
-                .DisplaySizes
-                .OrderBy(d => d.Name)
-                .Select(d => new DisplaySizeViewModel
+                .Select(d => new DisplayDropdownViewModel
                 {
                     Id = d.Id,
                     Name = d.Name

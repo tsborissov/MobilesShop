@@ -38,20 +38,11 @@
                 </select>
             </div>
             <div class="form-group">
-                <label asp-for="DisplayTypeId"></label>
-                <select asp-for="DisplayTypeId" class="form-control">
-                    @foreach (var displayType in Model.DisplayTypes)
+                <label asp-for="DisplayId"></label>
+                <select asp-for="DisplayId" class="form-control">
+                    @foreach (var display in Model.Displays)
                     {
-                        <option value="@displayType.Id">@displayType.Name</option>
-                    }
-                </select>
-            </div>
-            <div class="form-group">
-                <label asp-for="DisplaySizeId"></label>
-                <select asp-for="DisplaySizeId" class="form-control">
-                    @foreach (var displaySize in Model.DisplaySizes)
-                    {
-                        <option value="@displaySize.Id">@displaySize.Name</option>
+                        <option value="@display.Id">@display.Name</option>
                     }
                 </select>
             </div>

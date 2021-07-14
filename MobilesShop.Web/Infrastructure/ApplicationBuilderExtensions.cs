@@ -21,8 +21,6 @@ namespace MobilesShop.Web.Infrastructure
             SeedBrands(data);
             SeedCameraTypes(data);
             SeedChipsets(data);
-            SeedDisplaySizes(data);
-            SeedDisplayTypes(data);
 
             return app;
         }
@@ -88,51 +86,6 @@ namespace MobilesShop.Web.Infrastructure
                 new Chipset { Name = "Snapdragon 801", Cores = 4, Clock = 2500},
                 new Chipset { Name = "Exynos 7570", Cores = 4, Clock = 1400 },
                 new Chipset { Name = "MediaTek MT6739", Cores = 4, Clock = 1500 },
-            });
-
-            data.SaveChanges();
-        }
-
-        private static void SeedDisplaySizes(MobilesShopDbContext data)
-        {
-            if (data.DisplaySizes.Any())
-            {
-                return;
-            }
-
-            data.DisplaySizes.AddRange(new[] 
-            {
-                new DisplaySize { Name = "4.0\"" },
-                new DisplaySize { Name = "4.7\"" },
-                new DisplaySize { Name = "5.0\"" },
-                new DisplaySize { Name = "5.1\"" },
-                new DisplaySize { Name = "5.2\"" },
-                new DisplaySize { Name = "5.5\"" },
-                new DisplaySize { Name = "5.7\"" },
-                new DisplaySize { Name = "5.8\"" },
-                new DisplaySize { Name = "6.0\"" },
-                new DisplaySize { Name = "6.2\"" },
-            });
-
-            data.SaveChanges();
-        }
-
-        private static void SeedDisplayTypes(MobilesShopDbContext data)
-        {
-            if (data.DisplayTypes.Any())
-            {
-                return;
-            }
-
-            data.DisplayTypes.AddRange(new[] 
-            {
-                new DisplayType { Name = "IPS-LCD" },
-                new DisplayType { Name = "IPS" },
-                new DisplayType { Name = "TFT" },
-                new DisplayType { Name = "AMOLED" },
-                new DisplayType { Name = "Super AMOLED" },
-                new DisplayType { Name = "OLED" },
-                new DisplayType { Name = "LCD" },
             });
 
             data.SaveChanges();

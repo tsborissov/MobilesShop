@@ -15,11 +15,16 @@
         public const int ChipsetClockMinValue = 500;
         public const int ChipsetClockMaxValue = 10000;
 
-        public const int DisplayTypeNameMinLength = 3;
-        public const int DisplayTypeNameMaxLength = 20;
 
-        public const int DisplaySizeNameMinLength = 2;
-        public const int DisplaySizeNameMaxLength = 6;
+        public const int DisplayNameMinLength = 2;
+        public const int DisplayNameMaxLength = 20;
+        public const int DisplayResolutionMinLength = 4;
+        public const int DisplayResolutionMaxLength = 10;
+        public const string DisplayResolutionPattern = @"^([0-9]{3,4} x [0-9]{3,4})$";
+        public const int DisplayProtectionMinLength = 3;
+        public const int DisplayProtectionMaxLength = 30;
+        public const int DisplaySizeMinValue = 0;
+        public const int DisplaySizeMaxValue = 10;
 
         public const int MobilePhoneModelMinLength = 5;
         public const int MobilePhoneModelMaxLength = 30;

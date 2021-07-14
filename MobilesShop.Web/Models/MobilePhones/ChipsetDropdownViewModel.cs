@@ -1,6 +1,6 @@
 ﻿namespace MobilesShop.Web.Models.MobilePhones
 {
-    public class ChipsetViewModel
+    public class ChipsetDropdownViewModel
     {
         public int Id { get; init; }
 
